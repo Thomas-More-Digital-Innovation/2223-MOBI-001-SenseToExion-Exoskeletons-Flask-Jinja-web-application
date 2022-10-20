@@ -1,2 +1,2 @@
-# 2223-DI000-TemplateRepo
-Template repository
+# 2223-MOBI-001-Sense2Exion Exoskeleton application
+
