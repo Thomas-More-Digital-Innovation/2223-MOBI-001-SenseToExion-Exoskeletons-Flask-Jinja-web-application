@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html data-theme="forest" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flowbite Flask</title>
-    <link rel="stylesheet" href="{{ url_for('static',filename='dist/css/output.css') }}">
-</head>
-<body class="container mx-auto my-5">
-{% from "components/navbar.html" import navbar %}
-{{ navbar() }}
-<h1 class="text-4xl text-center mt-5">Hello, Flask with Daisy UI!</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Homepage</title>
+{% endblock %}
+
+{% block navbar %}
+    {% from "components/navbar.html" import navbar %}
+    {{ navbar() }}
+{% endblock %}
+
+{% block header %}
+    <h1 class="text-4xl text-center mt-5">Homepage</h1>
+{% endblock %}
