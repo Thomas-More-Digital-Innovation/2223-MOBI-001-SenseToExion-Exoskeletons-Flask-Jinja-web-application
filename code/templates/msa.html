@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>MSA</title>
+{% endblock %}
+
+{% block navbar %}
+    {% from "components/navbar.html" import navbar %}
+    {{ navbar() }}
+{% endblock %}
+
+{% block header %}
+    <h1 class="text-4xl text-center mt-5">MSA</h1>
+{% endblock %}
