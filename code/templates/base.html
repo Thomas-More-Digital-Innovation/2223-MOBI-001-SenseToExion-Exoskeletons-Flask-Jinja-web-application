@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='dist/output.css') }}">
     {% block head %}{% endblock %}
 </head>
-<body class="container mx-auto my-5">
+<body class="container mx-auto px-3 my-5">
 <header>
     {% block navbar %}{% endblock %}
     {% block header %}{% endblock %}
 </header>
 {% block body %}{% endblock %}
-{% block footer %}{% endblock %}
+{% block footer %}
+    {% from "components/footer.html" import footer %}
+    {{ footer() }}
+{% endblock %}
 </body>
 {% block scripts %}{% endblock %}
 </html>
