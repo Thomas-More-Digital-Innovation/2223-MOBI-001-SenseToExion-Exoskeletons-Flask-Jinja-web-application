@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <title>Risks</title>
+    <title>Risksl</title>
 {% endblock %}
 
 {% block navbar %}
@@ -10,5 +10,114 @@
 {% endblock %}
 
 {% block header %}
-    <h1 class="text-4xl text-center mt-5">Risks</h1>
+    <h1 class="text-4xl text-center my-5 text-rose-500/50">Risico's</h1>
+{% endblock %}
+
+{% block body %}
+    <div class="grid grid-cols-5">
+        <div class="card bg-zinc-800 shadow-xl">
+            <figure><img src="{{ url_for('static', filename='images/risicos.png') }}" alt="Shoes"/>
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title text-4xl text-center mb-3">Welke soorten risico's bestaan er zoal?</h2>
+            </div>
+        </div>
+        <div class="col-span-4 px-5">
+            <div class="grid-rows-5 gap-5">
+                <p class="text-info-content row-span-1 my-5 italic text-justify px-32">Om het risico op musculoskeletale
+                    aandoeningen (MSA) te
+                    kunnen bepalen
+                    tijdens een professionele handeling, is het belangrijk om de professionele handeling op de juiste
+                    manier te gaan bestuderen. Vanuit de literatuur zijn er verschillende condities beschreven die
+                    bepalen of een professionele handeling een risico inhoudt of niet. De condities die bijdragen tot
+                    een verhoogd risico op MSA noemen we de risicofactoren. Enkele voorbeelden van deze risicofactoren
+                    zijn herhaaldelijke bewegingen, onvoldoende hersteltijd, lang stilzitten, roteren of draaien van rug
+                    tijdens tillen van lasten, te zware lasten tillen en trillingen. De risicofactoren kunnen
+                    grotendeels ingedeeld worden in zes groepen: statische houdingen, repetitieve bewegingen, kracht,
+                    tijdsaspecten, omgevingsfactoren en trillingen.
+                </p>
+                <div class="tabs row-span-1 justify-end my-5 py-5">
+                    <a class="tab tab-bordered" onclick="highlightParagraph(0, 'fuchsia')">Tools</a>
+                    <a class="tab tab-bordered" onclick="highlightParagraph(1, 'emerald')">Categorieën</a>
+                    <a class="tab tab-bordered" onclick="highlightParagraph(2, 'orange')">Vaardigheden</a>
+                    <a class="tab tab-bordered" onclick="highlightParagraph(3, 'rose')">Risicozones</a>
+                </div>
+                <div class="info row-span-3 mt-5 pt-5 px-32 text-justify">
+                    <p id="tools" class="mb-3 tab-info">
+                        Om een inschatting te kunnen maken van het risico tijdens een professionele handeling zijn
+                        risicotools ontwikkeld. Deze gaan de professionele handeling analyseren aan de hand van enkele
+                        factoren en bepalen zo of er een aanpassing nodig is aan de werkplek of niet. Het aantal
+                        beschikbare
+                        risicotools is zeer groot en elk van deze tools analyseert een specifieke combinatie van
+                        risicofactoren, zo zal bijvoorbeeld de ene tool wel rekening houden met tijdsaspecten en de
+                        andere
+                        tool niet.
+                    </p>
+                    <p id="categories" class="mb-3 tab-info">
+                        De risicotools kunnen worden onderverdeeld in verschillende categorieën. Een eerste manier van
+                        opsplitsen is naargelang de specifieke taak die ze analyseren. Zo heb je risicotools die trek-
+                        en
+                        duwtaken analyseren (bv. Snook tabellen of KIM trekken/duwen), maar ook specifieke tools voor
+                        heffen
+                        en tillen (bv. NIOSH tilnorm of MAC tool), repetitieve hand- en armtaken (bv. RULA of ART) en
+                        statische houdingen (bv. KIM statische houdingen). In tegenstelling tot deze risicotools voor
+                        één
+                        specifieke taak heb je ook risicotools die proberen een analyse te maken van de hele
+                        werksituatie en
+                        dus verschillende taken gaan combineren (bv. EAWS). We hebben hier enkele voorbeelden
+                        bijgeschreven,
+                        maar het aantal risicotools dat kan teruggevonden worden is zeer groot.
+                    </p>
+                    <p id="skills" class="mb-3 tab-info">
+                        Naast een indeling op basis van de taak die je uitvoert, kunnen risicotools ook ingedeeld worden
+                        aan
+                        de hand van de vaardigheden die je nodig hebt om de taak juist te gaan analyseren. Je hebt
+                        eenvoudige risicotools die enkel een beperkte screening gaan doen (bv. KIM en ART), je hebt meer
+                        complexe risicotools die de beweging meer in detail gaan analyseren (bv. NIOSH en OCRA) en je
+                        hebt
+                        de tools op expertise niveau die specifiek moeten uitgevoerd worden door iemand met ervaring in
+                        ergonomie (bv. OWAS en RULA).
+                    </p>
+                    <p id="riskzone" class="mb-3 tab-info">
+                        Wanneer je een risicotool uitgevoerd hebt, zal deze aangeven of je in een lage risicozone op MSA
+                        zit
+                        en er dus bijgevolg geen aanpassingen aan de werkvloer nodig zijn of zal deze aangeven dat je in
+                        een
+                        hogere risicozone zit en er dus verder onderzoek/aanpassingen nodig zijn. De risicotool zelf zal
+                        niet aangeven welke aanpassingen je kan doen aan de werksituatie zelf of welke hulpmiddelen je
+                        zou
+                        kunnen gebruiken. Binnen dit project zullen we vooral focussen op externe hulpmiddelen, met name
+                        exoskeletten en sensoren. Uiteraard is het belangrijk om eerst in te zetten op aanpassingen op
+                        de
+                        werkvloer, zoals de werkhoogte aanpassen, juiste tiltechnieken aanleren, meer of langere
+                        rustpauzes
+                        inlassen en het gebruik van werkvloer specifieke hulpmiddelen (bv. tillift voor patiënten in een
+                        ziekenhuis).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        let tabs = document.querySelectorAll(".tabs .tab");
+        let info = document.querySelectorAll(".info .tab-info");
+        console.log(tabs);
+
+        function highlightParagraph(index, color) {
+            tabs.forEach(function (node) {
+                node.classList.remove("tab-active", `text-${color}-500`);
+                node.classList.add("text-white");
+            });
+            info.forEach(function (node) {
+                node.classList.remove(`text-accent`, "font-bold");
+//                node.classList.add("text-white");
+            });
+            tabs[index].classList.remove('text-white');
+            tabs[index].classList.add(`text-${color}-500`, 'tab-active');
+            info[index].classList.add(`text-accent`, "font-bold");
+        }
+    </script>
 {% endblock %}
