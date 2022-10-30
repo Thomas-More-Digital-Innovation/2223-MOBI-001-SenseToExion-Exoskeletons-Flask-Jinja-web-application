@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <title>MSA</title>
+    <title>Musocskeletale aandoeningen</title>
 {% endblock %}
 
 {% block navbar %}
@@ -14,11 +14,14 @@
 {% endblock %}
 
 {% block body %}
-    <div class="grid grid-cols-5 h-screen">
-        <div class="card bg-zinc-800 shadow-xl col-span-2">
+    <div class="grid grid-cols-5">
+        <div class="card bg-zinc-800 shadow-xl">
             <div class="card-body">
                 <h2 class="card-title text-4xl text-center mb-3">Wat zijn muscoskeletale aandoeningen?</h2>
-                <p class="text-2xl text-center">Musculoskeletale aandoeningen (MSA) is een verzamelnaam voor klachten
+                <p class="text-info-content italic">Musculoskeletale aandoeningen (MSA) is een
+                    verzamelnaam
+                    voor
+                    klachten
                     ter hoogte van de musculoskeletale structuren. Hieronder vallen spieren, gewrichten, pezen,
                     ligamenten en zenuwen.
                 </p>
@@ -26,33 +29,29 @@
             <figure><img src="{{ url_for('static', filename='images/msa.png') }}" alt="Shoes" class="object-fit"/>
             </figure>
         </div>
-        <div class="grid grid-rows-5 col-span-3 px-5">
-            <div class="tabs row-span-1 justify-end">
+        <div class="grid grid-rows-5 col-span-4">
+            <div class="tabs row-span-1 justify-end my-5 py-5">
                 <a class="tab tab-bordered" onclick="highlightParagraph(0, 'fuchsia')">Klachten</a>
                 <a class="tab tab-bordered" onclick="highlightParagraph(1, 'emerald')">Oorzaken</a>
                 <a class="tab tab-bordered" onclick="highlightParagraph(2, 'orange')">Gevolgen</a>
             </div>
-            <div class="info row-span-4 mt-5 text-justify">
+            <div class="info row-span-4 mt-5 px-32 text-justify">
                 <p id="complaints" class="mb-3 tab-info">De klachten kunnen zowel de bovenste en onderste ledematen als
-                    de romp,
-                    nek en het
-                    hoofd treffen. MSA
-                    ontstaan door een combinatie van verschillende factoren: biomechanische factoren (bv. slechte
+                    de romp, nek en het hoofd treffen. MSA ontstaan door een combinatie van verschillende factoren:
+                    biomechanische factoren (bv. slechte
                     houding, een te zware last), omgevingsfactoren (bv. koude temperaturen, wind), psychosociale
                     factoren (bv. stress, vermoeidheid), organisatorische factoren (bv. opgelegde werksnelheid, weinig
                     pauzes) en persoonlijke factoren (bv. verzwakte rugspieren, grootte).</p>
                 <p id="cause" class="mb-3 tab-info">Zoals hierboven vermeld ontstaan MSA ter hoogte van de verschillende
-                    onderdelen van het
-                    musculoskeletale stelsel. Het grootste aantal klachten situeert zich in de rug, gevolgd door
-                    klachten in bovenste ledematen en onderste ledematen. Meer dan de helft van de werknemers met MSA
+                    onderdelen van het musculoskeletale stelsel. Het grootste aantal klachten situeert zich in de rug,
+                    gevolgd door klachten in bovenste ledematen en onderste ledematen. Meer dan de helft van de
+                    werknemers met MSA
                     hebben een combinatie van lichamelijke klachten. Typische voorbeelden van MSA zijn het stijve-nek
                     syndroom (spieraandoening), carpaal tunnel syndroom (zenuwaandoening), hernia (aandoening
                     tussenwervelschijf) en een tenniselleboog (peesaandoening met klachten aan buitenzijde van de
                     elleboog).</p>
-                <p id="effect" class="mb-3 tab-info">MSA veroorzaken pijn en beperkingen bij de werknemer. Deze kunnen
-                    een sterke
-                    impact
-                    hebben op zowel
+                <p id="effect" class="mb-3 tab-info">
+                    MSA veroorzaken pijn en beperkingen bij de werknemer. Deze kunnen een sterke impact hebben op zowel
                     persoonlijk als professioneel vlak. In de beginfase zal de werknemer pijn hebben en vermoeid zijn op
                     het einde van de werkdag, maar zullen de klachten verdwijnen na de nachtrust. Na verloop van tijd
                     zullen de klachten niet meer verdwijnen met een nachtje rust en zal de pijn aanhouden. Dit kan
@@ -63,7 +62,8 @@
                 <p>Personen die fysiek risicovolle beroepsactiviteiten uitvoeren hebben een verhoogd risico op MSA. Dit
                     risico kan verminderd worden door o.a. aanpassingen aan de werkplek, verlaging van de te tillen
                     lasten, het inlassen van meer rustpauzes, … Een andere piste is echter ook het inzetten van
-                    draagbare technologie, meer zoals exoskeletten en slimme sensoren.</p>
+                    draagbare technologie, meer zoals exoskeletten en slimme sensoren.
+                </p>
             </div>
         </div>
     </div>
@@ -81,11 +81,11 @@
                 node.classList.add("text-white");
             });
             info.forEach(function (node) {
-                node.classList.remove("font-bold");
+                node.classList.remove("text-accent", "font-bold");
             });
             tabs[index].classList.remove('text-white');
             tabs[index].classList.add(`text-${color}-500`, 'tab-active');
-            info[index].classList.add("font-bold");
+            info[index].classList.add("text-accent", "font-bold");
         }
     </script>
 {% endblock %}
