@@ -1,0 +1,14 @@
+name: main_application
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: execute py script
+        env: 
+          NEO4J_CONNECTION_URI: ${{ secrets.NEO4J_CONNECTION_URI }}
+          NEO4J_USERNAME: ${{ secrets.NEO4J_USERNAME }}
+          NEO4J_PASSWORD: ${{ secrets.NEO4J_PASSWORD }}
+        run: python app.py
