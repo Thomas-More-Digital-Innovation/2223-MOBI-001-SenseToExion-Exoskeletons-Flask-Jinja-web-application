@@ -10,5 +10,45 @@
 {% endblock %}
 
 {% block header %}
-    <h1 class="text-4xl text-center mt-5">Sensors</h1>
+    <h1 class="text-4xl text-center mt-5 text-rose-500/50">Sensoren</h1>
+{% endblock %}
+
+{% block body %}
+    <div class="grid grid-cols-5">
+        <div class="card bg-zinc-800 shadow-xl">
+            <figure><img src="{{ url_for('static', filename='images/sensor.webp') }}" alt="Shoes"/>
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title text-4xl text-center mb-3">Welke rol spelen sensoren in dit verhaal?</h2>
+            </div>
+        </div>
+        <div class="col-span-4 px-5">
+            <div class="grid-rows-5 gap-5">
+                <p class="text-info-content row-span-1 my-5 italic text-justify px-32">Een sensor meet fysieke
+                    omstandigheden op, zoals bijvoorbeeld spieractiviteit of snelheid. De data wordt automatisch
+                    opgenomen en doorgestuurd om uitgelezen en geanalyseerd te worden. In het kader van het ‘Sense to
+                    eXion’-project kunnen sensoren op 2 manieren worden ingezet.
+                </p>
+            </div>
+            <div class="info row-span-3 mt-5 pt-5 px-32 text-justify">
+                <p class="mb-3">Enerzijds kunnen sensoren gebruikt worden voor het analyseren van fysieke
+                    beroepsactiviteiten. Hiervoor wordt binnen het project gebruik gemaakt van IMU’s en EMG-sensoren.
+                    IMU is de afkorting voor Inertial Measurement Unit. Een IMU is een draagbaar apparaatje dat bestaat
+                    uit verschillende sensoren, met name een accelerometer, een gyroscoop en (meestal) een magnetometer.
+                    Met deze IMU’s kunnen de gewrichtshoeken en de beweging van het lichaam opgemeten worden. EMG staat
+                    voor electromyografie. Met EMG-sensoren wordt de elektrische activiteit van de spieren opgemeten,
+                    waardoor we kunnen inschatten hoe hard een spier moet werken tijdens een bepaalde taak.
+                </p>
+                <p class="mb-3">Dankzij de combinatie van beide types sensoren kunnen we een grondige analyse doen van
+                    een bepaalde beroepsactiviteit. Deze analyse kan zowel zonder hulpmiddel als met hulpmiddel
+                    uitgevoerd worden om zo het effect van het hulpmiddel te bestuderen.
+                </p>
+                <p class="mb-3">Anderzijds kunnen sensoren ook ter preventie van musculoskeletale aandoeningen ingezet
+                    worden. Zo kunnen ze gebruikers directe feedback geven bv. om de gebruiker aan te moedigen om beter
+                    rechtop te zitten (door te trillen bij een slechte houding). Ze kunnen bv. ook een waarschuwing
+                    geven wanneer een bepaald niveau van belasting bereikt is en het tijd is om pauze te nemen.
+                </p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
