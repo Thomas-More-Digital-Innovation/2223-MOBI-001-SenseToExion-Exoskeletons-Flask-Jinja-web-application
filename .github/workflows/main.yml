@@ -6,6 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@main
       - name: execute py script
         env: 
           NEO4J_CONNECTION_URI: ${{ secrets.NEO4J_CONNECTION_URI }}
