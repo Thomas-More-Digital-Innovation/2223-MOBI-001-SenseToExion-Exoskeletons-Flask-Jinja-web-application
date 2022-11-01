@@ -47,7 +47,11 @@ def sensors():
 
 @app.route("/tool")
 def tool():
-    return render_template("tool.html")
+    query_all_exoskeletons = "MATCH (e:Exo) RETURN e.exoNaam as Name, e.exoFabrikant as Manufacturer"
+    all_exoskeletons = g.run(query_all_exoskeletons).data()
+    # sorted_exoskeletons = sorted(all_exoskeletons, key=lambda d: d["exoskeletons"]["exo_name"])
+    print(all_exoskeletons)
+    return render_template("tool.html", exoskeletons=all_exoskeletons)
 
 
 @app.route("/blog")
