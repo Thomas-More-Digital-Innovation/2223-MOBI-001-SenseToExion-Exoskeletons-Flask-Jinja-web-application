@@ -12,3 +12,176 @@
 {% block header %}
     <h1 class="text-4xl text-center mt-5">Exoskeletons</h1>
 {% endblock %}
+
+{% block body %}
+    <div class="grid grid-cols-5">
+        <div class="lg:card bg-zinc-800 shadow-xl">
+            <figure><img src="{{ url_for('static', filename='images/exoskeletons.png') }}" alt="Shoes"/>
+            </figure>
+            <div class="lg:card-body">
+                <h2 class="lg:card-title text-4xl text-center mb-3">Een exoskelet, wat is dat juist? Welke soorten
+                    bestaan
+                    er?</h2>
+            </div>
+        </div>
+        <div class="col-span-4 px-5">
+            <div class="grid-rows-5 gap-5">
+                <p class="text-info-content row-span-1 my-5 italic text-justify px-32">De mens is niet van nature
+                    uitgerust met een exoskelet, maar kan wel gebruik maken van kunstmatige exoskeletten. Een van de
+                    eerste vormen van dergelijke kunstmatige exoskeletten zijn harnassen, die gebruikt werden ter
+                    bescherming bij gevechten. Stilaan zijn er ook exoskeletten ontstaan die ingezet kunnen worden voor
+                    medische en industriële doeleinden. In dit kader is een exoskelet een draagbaar uitwendig skelet dat
+                    beweging, houding of fysieke activiteit verbetert, mogelijk maakt of ondersteunt. Exoskeletten
+                    kunnen bijgevolg mensen beschermen tegen fysieke overbelasting. Orthesen zijn ook een beperkte vorm
+                    van een exoskelet, die aangebracht worden op een ledemaat of op de romp, om de werking of de vorm
+                    van de ledemaat of de ruggengraat te ondersteunen.
+                </p>
+                <p class="row-span-1 my-5 text-justify px-32">Kunstmatige exoskeletten kunnen op verschillende manieren
+                    ingedeeld worden:</p>
+                <div class="tabs row-span-1 justify-end my-5 py-5">
+                    <a class="tab tab-bordered" onclick="highlightParagraph(0, 'fuchsia')">actief versus passief</a>
+                    <a class="tab tab-bordered" onclick="highlightParagraph(1, 'emerald')">zachte materialen versus
+                        harde materialen</a>
+                    <a class="tab tab-bordered" onclick="highlightParagraph(2, 'orange')">per gewricht(en)</a>
+                    <a class="tab tab-bordered" onclick="highlightParagraph(3, 'rose')">per handeling</a>
+                </div>
+                <div class="info row-span-3 mt-5 pt-5 px-32 text-justify">
+                    <p id="active_passive" class="mb-3 tab-info">Een eerste mogelijke onderverdeling is actief/passief.
+                        Een actief exoskelet bestaat uit een of meer actuatoren (bv. elektromotoren) die het menselijk
+                        lichaam actief van energie voorzien. Een passief systeem maakt geen gebruik van een externe
+                        krachtbron, maar gebruikt bv. veren die op het ene moment energie van de menselijke beweging
+                        opslaan om vervolgens op het gepaste moment weer af te geven.</p>
+                    <div class="overflow-x-auto w-full tab-info">
+                        <p id="soft_hard" class="mb-3">Exoskeletten kunnen zowel uit zachte materialen als
+                            harde
+                            materialen bestaan. Zachte exoskeletten bestaan uit overwegend zachte en/of elastische
+                            structuren. In het geval van actieve zachte exoskeletten spreken we van ‘powered clothing’,
+                            bij
+                            passieve zachte exoskeletten van ‘exo-suits’. Harde exoskeletten bestaan overwegend uit
+                            harde,
+                            stijve structuren. Actieve harde exoskeletten noemt men ook wel ‘wearable robotics’,
+                            passieve
+                            harde exoskeletten ‘exo-skeletons’. Hieronder wordt het verschil nog wat verduidelijkt met
+                            een
+                            aantal voorbeelden.</p>
+                        <table class="table table-zebra w-full">
+                            <!-- head -->
+                            <thead>
+                            <tr class="text-center">
+                                <th></th>
+                                <th class=" font-bold text-xl">Zachte materialen</th>
+                                <th class=" font-bold text-xl">Harde materialen</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- row 1 -->
+                            <tr>
+                                <th>
+                                    <label>Actief</label>
+                                </th>
+                                <td>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="avatar">
+                                            <div class="mask mask-squircle w-48 h-48">
+                                                <img src="{{ url_for('static', filename='images/powered clothing.png') }}"
+                                                     alt="Avatar Tailwind CSS Component"/>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-orange-500 font-bold">Powered clothing</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="avatar">
+                                            <div class="mask mask-squircle w-48 h-48">
+                                                <img src="{{ url_for('static', filename='images/wearable robotics.png') }}"
+                                                     alt="Avatar Tailwind CSS Component"/>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-orange-500 font-bold">Wearable Robotics</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- row 2 -->
+                            <tr>
+                                <th>
+                                    <label>Passief</label>
+                                </th>
+                                <td>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="avatar">
+                                            <div class="mask mask-squircle w-48 h-48">
+                                                <img src="{{ url_for('static', filename='images/exosuit.png') }}"
+                                                     alt="Avatar Tailwind CSS Component"/>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-orange-500 font-bold">Exosuit</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="avatar">
+                                            <div class="mask mask-squircle w-48 h-48">
+                                                <img src="{{ url_for('static', filename='images/exoskeleton.png') }}"
+                                                     alt="Avatar Tailwind CSS Component"/>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-orange-500 font-bold">Exoskeletons</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p id="joint" class="mb-3 tab-info">Exoskeletten kunnen één of meerdere gewrichten omvatten. Zo
+                        omvat bv. een polsbrace slechts één gewricht, met name de pols. Full-body exoskeletten zijn
+                        voorbeelden van exoskeletten die meerdere gewrichten ondersteunen. Naast een onderverdeling naar
+                        het aantal gewrichten dat een exoskelet ondersteunt, kan er bovendien ook een opdeling gebeuren
+                        naar welk gewricht juist ondersteund wordt, bv. schouderexoskeletten, rugexoskeletten,...</p>
+                    <p id="operation" class="mb-3 tab-info">Verschillende types handelingen vereisen verschillende
+                        exoskeletten. Zo bestaan er specifieke exoskeletten voor bovenhands werken, heffen en
+                        tillen,…</p>
+                    <p class="pt-16 mb-3">In het Sense to eXion project ligt de focus op passieve, industriële
+                        exoskeletten.
+                        Deze kunnen dus zowel van harde als zachte materialen gemaakt worden. Binnen het project zullen
+                        ook verschillende gewrichten en handelingen aan bod komen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        let tabs = document.querySelectorAll(".tabs .tab");
+        let info = document.querySelectorAll(".info .tab-info");
+        console.log(tabs);
+
+        info.forEach(function (node) {
+            node.classList.add("hidden");
+        });
+
+        function highlightParagraph(index, color) {
+            tabs.forEach(function (node) {
+                node.classList.remove("tab-active", `text-${color}-500`);
+                node.classList.add("text-white");
+            });
+            info.forEach(function (node) {
+                node.classList.remove(`text-accent`, "font-bold");
+                node.classList.add("hidden");
+                //                node.classList.add("text-white");
+            });
+            tabs[index].classList.remove('text-white');
+            tabs[index].classList.add(`text-${color}-500`, 'tab-active');
+            info[index].classList.add("font-bold");
+            info[index].classList.remove("hidden");
+        }
+    </script>
+{% endblock %}
