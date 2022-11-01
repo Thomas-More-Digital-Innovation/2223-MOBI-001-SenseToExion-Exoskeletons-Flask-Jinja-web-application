@@ -1,4 +1,20 @@
+import os
+
 from flask import Flask, render_template
+from py2neo import Graph
+from py2neo import NodeMatcher, RelationshipMatcher
+
+# Credentials from Environment
+NEO4J_CONNECTION_URI = os.environ.get("NEO4J_CONNECTION_URI")
+NEO4J_USERNAME = os.environ.get("NEO4J_USERNAME")
+NEO4J_PASSWORD = os.environ.get("NEO4J_PASSWORD")
+print(NEO4J_CONNECTION_URI)
+
+# Neo4j Sense2Exion Database
+Graph = Graph(NEO4J_CONNECTION_URI, auth=(NEO4J_USERNAME, NEO4J_PASSWORD))
+g = Graph
+node_matcher = NodeMatcher(g)
+relationship_matcher = RelationshipMatcher(g)
 
 app = Flask(__name__)
 
