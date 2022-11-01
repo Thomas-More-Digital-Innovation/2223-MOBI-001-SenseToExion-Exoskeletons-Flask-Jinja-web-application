@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@main
+      - name: install requirements
+        run: pip install ./code/requirements.txt
       - name: execute py script
         env: 
           NEO4J_CONNECTION_URI: ${{ secrets.NEO4J_CONNECTION_URI }}
