@@ -11,10 +11,7 @@ NEO4J_PASSWORD = os.environ.get("NEO4J_PASSWORD")
 print(NEO4J_CONNECTION_URI)
 
 # Neo4j Sense2Exion Database
-Graph = Graph(NEO4J_CONNECTION_URI, auth=(NEO4J_USERNAME, NEO4J_PASSWORD))
-g = Graph
-node_matcher = NodeMatcher(g)
-relationship_matcher = RelationshipMatcher(g)
+
 
 app = Flask(__name__)
 
@@ -62,7 +59,20 @@ def cases():
 
 @app.route("/links")
 def links():
-    return render_template("links.html")
+    links = [
+        {
+            "url": "https://www.ergonomiesite.be/",
+            "title": "Ergonomie",
+            "description": "Informatie en onderzoek over ergonomie"
+        },
+        {
+            "url": "https://mobilabandcare.be/",
+            "title": "Mobilab",
+            "description": "Mobilab & care"
+        }
+    ]
+
+    return render_template("links.html", links=links)
 
 
 if __name__ == '__main__':
