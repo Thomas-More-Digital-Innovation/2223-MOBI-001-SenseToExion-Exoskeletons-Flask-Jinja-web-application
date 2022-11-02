@@ -69,7 +69,28 @@ def links():
             "url": "https://mobilabandcare.be/",
             "title": "Mobilab",
             "description": "Mobilab & care"
+        },
+        {
+            "url": "https://mobilabandcare.be/sense-to-exion/",
+            "title": "Sense2Exion",
+            "description": "Sense2Exion website"
+        },
+        {
+            "url": "https://www.verv.be",
+            "title": "Beroepsvereniging",
+            "description": "Beroepsvereniging voor Ergonomie website"
+        },
+        {
+            "url": "https://exoskeletonreport.com/",
+            "title": "Exoskeletten",
+            "description": "Een uitgebreid overzicht van exoskeletten"
+        },
+        {
+            "url": "https://www.vlaio.be",
+            "title": "Vlaio",
+            "description": "Vlaamse overheid"
         }
+
     ]
 
     return render_template("links.html", links=links)
