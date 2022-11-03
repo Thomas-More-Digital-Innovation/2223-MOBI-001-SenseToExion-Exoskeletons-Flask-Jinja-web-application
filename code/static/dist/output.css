@@ -2421,6 +2421,11 @@ html {
   mask-image: url("data:image/svg+xml,%3csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M100 0C20 0 0 20 0 100s20 100 100 100 100-20 100-100S180 0 100 0Z'/%3e%3c/svg%3e");
 }
 
+.mask-circle {
+  -webkit-mask-image: url("data:image/svg+xml,%3csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle fill='black' cx='100' cy='100' r='100' fill-rule='evenodd'/%3e%3c/svg%3e");
+  mask-image: url("data:image/svg+xml,%3csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle fill='black' cx='100' cy='100' r='100' fill-rule='evenodd'/%3e%3c/svg%3e");
+}
+
 @-webkit-keyframes progress-loading {
   50% {
     left: 107%;
@@ -2838,6 +2843,10 @@ html {
   position: static;
 }
 
+.relative {
+  position: relative;
+}
+
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
@@ -2928,6 +2937,10 @@ html {
   margin-bottom: 1.25rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .block {
   display: block;
 }
@@ -2964,6 +2977,10 @@ html {
   height: 12rem;
 }
 
+.h-24 {
+  height: 6rem;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -2988,6 +3005,14 @@ html {
   width: 12rem;
 }
 
+.w-24 {
+  width: 6rem;
+}
+
+.w-\[400px\] {
+  width: 400px;
+}
+
 .w-96 {
   width: 24rem;
 }
@@ -3006,6 +3031,11 @@ html {
 
 .flex-none {
   flex: none;
+}
+
+
+.table-fixed {
+  table-layout: fixed;
 }
 
 .flex-grow {
@@ -3223,6 +3253,11 @@ html {
   line-height: 1;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -3313,6 +3348,33 @@ html {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+th, td {
+  padding: 15px;
+}
+
+table td {
+  word-wrap: break-word;
+}
+
+.odd\:bg-base-100:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--b1) / var(--tw-bg-opacity));
+}
+
+.even\:bg-base-300:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--b3, var(--b2)) / var(--tw-bg-opacity));
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
+.hover\:bg-primary-focus:hover {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--pf, var(--p)) / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
