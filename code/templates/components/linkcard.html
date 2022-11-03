@@ -1,0 +1,14 @@
+{% macro linkcard(url, title, description, img) -%}
+ <div class="card bg-base-100 shadow-xl col-span-2 ">
+     <figure class="object-cover"><img src="{{ url_for('static', filename='images/links/')}}{{title}}.png" alt="{{ title }} image "/></figure>
+          <div class="card-body">
+              <h2 class="card-title ">{{ title }}</h2>
+                <p>{{ description }}</p>
+                <div class="card-actions justify-end">
+                    <button class="btn btn-primary"><a class="linkspagina" href="{{ url }}" target="_blank">Meer info
+                </a></button>
+                </div>
+          </div>
+    </div>
+{%- endmacro %}
+
