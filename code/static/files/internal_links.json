@@ -1,0 +1,16 @@
+{
+  "internal_links": [
+    {
+      "title": "Exoskeletons",
+      "description": "Klik hier om alle exoskeletons te bekijken."
+    },
+    {
+      "title": "Joints",
+      "description": "Klik hier om alle gewrichten te bekijken."
+    },
+    {
+      "title": "Degrees of Freedom",
+      "description": "Klik hier om alle vrijheidsgraden te bekijken."
+    }
+  ]
+}

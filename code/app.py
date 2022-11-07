@@ -1,4 +1,5 @@
 import os
+import json
 
 from flask import Flask, render_template
 from py2neo import Graph
@@ -47,26 +48,13 @@ def sensors():
 
 @app.route("/tool")
 def tool():
-    query_all_exoskeletons = "MATCH (e:Exo) RETURN e.exoNaam as Name, e.exoFabrikant as Manufacturer, e.exoBeschrijving as Description"
+    query_all_exoskeletons = "MATCH (e:Exo) RETURN e.exoNaam as Name, e.exoFabrikant as Manufacturer, e.exoBeschrijving as Description ORDER BY Name"
     all_exoskeletons = g.run(query_all_exoskeletons).data()
     queries = {"Exoskeletons": all_exoskeletons}
-    # sorted_exoskeletons = sorted(all_exoskeletons, key=lambda d: d["exoskeletons"]["exo_name"])
-    button_links = [
-        {
-            "title": "Exoskeletons",
-            "description": "Klik hier om alle exoskeletons te bekijken.",
-        },
-        {
-            "title": "Joints",
-            "description": "Klik hier om alle gewrichten te bekijken.",
-        },
-        {
-            "title": "Degrees of Freedom",
-            "description": "Klik hier om alle vrijheidsgraden te bekijken.",
-        },
-    ]
+    file = open("static/files/internal_links.json")
+    data = json.load(file)
     print(all_exoskeletons)
-    return render_template("tool.html", queries=queries, links=button_links)
+    return render_template("tool.html", queries=queries, links=data["internal_links"])
 
 
 @app.route("/tool/<exo_name>")
@@ -87,41 +75,9 @@ def cases():
 
 @app.route("/links")
 def links():
-    links = [
-        {
-            "url": "https://www.ergonomiesite.be/",
-            "title": "Ergonomie",
-            "description": "Informatie en onderzoek over ergonomie"
-        },
-        {
-            "url": "https://mobilabandcare.be/",
-            "title": "Mobilab",
-            "description": "Mobilab & care"
-        },
-        {
-            "url": "https://mobilabandcare.be/sense-to-exion/",
-            "title": "Sense2Exion",
-            "description": "Sense2Exion website"
-        },
-        {
-            "url": "https://www.verv.be",
-            "title": "Beroepsvereniging",
-            "description": "Beroepsvereniging voor Ergonomie website"
-        },
-        {
-            "url": "https://exoskeletonreport.com/",
-            "title": "Exoskeletten",
-            "description": "Een uitgebreid overzicht van exoskeletten"
-        },
-        {
-            "url": "https://www.vlaio.be",
-            "title": "Vlaio",
-            "description": "Vlaamse overheid"
-        }
-
-    ]
-
-    return render_template("links.html", links=links)
+    file = open("static/files/external_links.json")
+    data = json.load(file)
+    return render_template("links.html", links=data["external_links"])
 
 
 if __name__ == '__main__':
