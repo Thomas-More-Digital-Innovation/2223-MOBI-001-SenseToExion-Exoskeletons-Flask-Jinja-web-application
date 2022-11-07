@@ -167,21 +167,26 @@
         info.forEach(function (node) {
             node.classList.add("hidden");
         });
+        let previous_color = "fuchsia";
+        tabs[0].classList.add(`text-${previous_color}-500`);
+        info[0].classList.remove("hidden");
+        info[0].classList.add("font-bold");
 
         function highlightParagraph(index, color) {
             tabs.forEach(function (node) {
-                node.classList.remove("tab-active", `text-${color}-500`);
-                node.classList.add("text-white");
+                node.classList.remove("tab-active", `text-${previous_color}-500`);
+                node.classList.add("text-base-500");
             });
             info.forEach(function (node) {
                 node.classList.remove(`text-accent`, "font-bold");
                 node.classList.add("hidden");
                 //                node.classList.add("text-white");
             });
-            tabs[index].classList.remove('text-white');
+            tabs[index].classList.remove('text-base-500');
             tabs[index].classList.add(`text-${color}-500`, 'tab-active');
             info[index].classList.add("font-bold");
             info[index].classList.remove("hidden");
+            previous_color = color;
         }
     </script>
 {% endblock %}
