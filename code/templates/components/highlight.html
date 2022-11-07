@@ -1,0 +1,37 @@
+{% macro highlight(hide=false, color="accent") %}
+    <script>
+        let tabs = document.querySelectorAll(".tabs .tab");
+        let info = document.querySelectorAll(".info .tab-info");
+        console.log(tabs);
+
+        {% if hide == true %}
+            info.forEach(function (node) {
+                node.classList.add("hidden");
+            });
+            info[0].classList.remove("hidden");
+        {% endif %}
+
+        let previous_color = "fuchsia";
+        tabs[0].classList.add(`text-${previous_color}-500`);
+        info[0].classList.add("font-bold", "text-{{color}}");
+
+        function highlightParagraph(index, color) {
+            tabs.forEach(function (node) {
+                node.classList.remove("tab-active", `text-${previous_color}-500`);
+                node.classList.add("text-base-500");
+            });
+            info.forEach(function (node) {
+                node.classList.remove(`text-{{color}}`, "font-bold");
+                {% if hide == true %}
+                    node.classList.add("hidden");
+                {% endif %}
+                //                node.classList.add("text-white");
+            });
+            tabs[index].classList.remove('text-base-500');
+            tabs[index].classList.add(`text-${color}-500`, 'tab-active');
+            info[index].classList.add("font-bold", "text-{{color}}");
+            info[index].classList.remove("hidden");
+            previous_color = color;
+        }
+    </script>
+{% endmacro %}
