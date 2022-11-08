@@ -5,6 +5,9 @@ from flask import Flask, render_template
 from py2neo import Graph
 from py2neo import NodeMatcher, RelationshipMatcher
 
+from webforms import SearchForm
+from flask_wtf.csrf import CSRFProtect
+
 # Credentials from Environment
 NEO4J_CONNECTION_URI = os.environ.get("NEO4J_CONNECTION_URI")
 NEO4J_USERNAME = os.environ.get("NEO4J_USERNAME")
@@ -17,7 +20,11 @@ g = Graph
 node_matcher = NodeMatcher(g)
 relationship_matcher = RelationshipMatcher(g)
 
+# Application Setup + CSRF Form security
 app = Flask(__name__)
+csrf = CSRFProtect(app)
+secret_key = os.urandom(24)
+app.config["SECRET_KEY"] = secret_key
 
 
 @app.route("/")
@@ -62,6 +69,20 @@ def tool():
 def tool_name(exo_name):
     exo_name = str(exo_name)
     return render_template("tool_details.html", exo_name=exo_name)
+
+
+@app.context_processor
+def base():
+    form = SearchForm()
+    return dict(form=form)
+
+
+@app.route("/tool_search", methods=["POST"])
+def search():
+    form = SearchForm()
+    if form.validate_on_submit():
+        exo_searched = form.searched.data
+        return render_template("search.html", form=form, searched=exo_searched)
 
 
 @app.route("/blog")

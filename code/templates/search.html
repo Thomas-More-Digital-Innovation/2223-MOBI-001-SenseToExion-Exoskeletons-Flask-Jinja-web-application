@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Search Resultsl</title>
+{% endblock %}
+
+{% block navbar %}
+    {% from "components/navbar.html" import navbar %}
+    {{ navbar() }}
+{% endblock %}
+
+{% block header %}
+    <h1 class="text-4xl text-center mt-5 text-rose-500/50">Search Results</h1>
+{% endblock %}
+
+{% block body %}
+    <h2 class="text-4xl text-primary">You searched for...</h2>
+    <p class="text-xl text-prinary-content">{{ searched }}</p>
+{% endblock %}
