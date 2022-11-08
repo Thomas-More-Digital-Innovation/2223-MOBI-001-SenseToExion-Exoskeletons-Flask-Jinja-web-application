@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <title>Musocskeletale aandoeningen</title>
+    <title>Musculoskeletale aandoeningen</title>
 {% endblock %}
 
 {% block navbar %}
@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block header %}
-    <h1 class="text-4xl text-center my-5 text-rose-500/50">MuscoSkeletale Aandoeningen</h1>
+    <h1 class="text-4xl text-center my-5 text-rose-500/50">MusculoSkeletale Aandoeningen</h1>
 {% endblock %}
 
 {% block body %}
@@ -68,22 +68,6 @@
 {% endblock %}
 
 {% block scripts %}
-    <script>
-        let tabs = document.querySelectorAll(".tabs .tab");
-        let info = document.querySelectorAll(".info .tab-info");
-        console.log(tabs);
-
-        function highlightParagraph(index, color) {
-            tabs.forEach(function (node) {
-                node.classList.remove("tab-active", `text-${color}-500`);
-                node.classList.add("text-white");
-            });
-            info.forEach(function (node) {
-                node.classList.remove("text-accent", "font-bold");
-            });
-            tabs[index].classList.remove('text-white');
-            tabs[index].classList.add(`text-${color}-500`, 'tab-active');
-            info[index].classList.add("text-accent", "font-bold");
-        }
-    </script>
+    {% from "components/highlight.html" import highlight %}
+    {{ highlight() }}
 {% endblock %}

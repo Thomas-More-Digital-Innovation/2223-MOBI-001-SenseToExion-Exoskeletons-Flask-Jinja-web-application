@@ -13,11 +13,11 @@
     <h1 class="text-4xl text-center mt-5">Links</h1>
 {% endblock %}
 {% block body %}
- <article class="grid md:grid-cols-6 grid-cols-6 " >
-    {% for link in links %}
-    {% from "components/linkcard.html" import linkcard %}
-        {{ linkcard(link["url"],link["title"],link["description"],"none") }}
-    {% endfor %}
+    <article class="grid md:grid-cols-6 grid-cols-6 ">
+        {% for link in links %}
+            {% from "components/linkcard.html" import linkcard %}
+            {{ linkcard(link["title"],link["description"], "none", link["url"]) }}
+        {% endfor %}
 
- </article>
+    </article>
 {% endblock %}
