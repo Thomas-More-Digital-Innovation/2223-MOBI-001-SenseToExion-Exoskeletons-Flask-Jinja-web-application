@@ -54,6 +54,7 @@ def tool():
     file = open("static/files/internal_links.json")
     data = json.load(file)
     print(all_exoskeletons)
+    print(data["internal_links"])
     return render_template("tool.html", queries=queries, links=data["internal_links"])
 
 
