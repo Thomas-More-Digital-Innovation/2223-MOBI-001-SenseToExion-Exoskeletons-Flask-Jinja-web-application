@@ -38,6 +38,7 @@ jspm_packages/
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+.idea/*
 
 # Local History for Visual Studio Code
 .history/
