@@ -5,9 +5,14 @@ module.exports = {
         "./static/src/**/*.js"
     ],
     theme: {
-        extend: {},
+        extend: {
+            backgroundImage:{
+                'DOF-1': "url('../static/images/exoskeleton.png"
+            }
+        },
     },
     plugins: [
         require("daisyui")
     ]
 }
+
