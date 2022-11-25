@@ -13,7 +13,7 @@
 
         let previous_color = "fuchsia";
         tabs[0].classList.add(`text-${previous_color}-500`);
-        info[0].classList.add("font-bold", "text-{{color}}");
+        info[0].classList.add("font-bold", "text-accent");
 
         function highlightParagraph(index, color) {
             tabs.forEach(function (node) {
@@ -28,7 +28,7 @@
             });
             tabs[index].classList.remove('text-base-500');
             tabs[index].classList.add(`text-${color}-500`, 'tab-active');
-            info[index].classList.add("font-bold", "text-{{color}}");
+            info[index].classList.add("font-bold", "text-accent");
             info[index].classList.remove("hidden");
             previous_color = color;
         }

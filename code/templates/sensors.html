@@ -10,21 +10,22 @@
 {% endblock %}
 
 {% block header %}
-    <h1 class="text-4xl text-center mt-5 text-rose-500/50">Sensoren</h1>
+    <h1 class="text-4xl text-center mt-5 text-primary">Sensoren</h1>
 {% endblock %}
 
 {% block body %}
     <div class="grid grid-cols-5">
-        <div class="card bg-zinc-800 shadow-xl">
+        <div class="card bg-accent shadow-xl">
             <figure><img src="{{ url_for('static', filename='images/sensor.webp') }}" alt="Shoes"/>
             </figure>
             <div class="card-body">
-                <h2 class="card-title text-4xl text-center mb-3">Welke rol spelen sensoren in dit verhaal?</h2>
+                <h2 class="card-title text-4xl text-center mb-3 text-base-100">Welke rol spelen sensoren in dit
+                    verhaal?</h2>
             </div>
         </div>
         <div class="col-span-4 px-5">
             <div class="grid-rows-5 gap-5">
-                <p class="text-info-content row-span-1 my-5 italic text-justify px-32">Een sensor meet fysieke
+                <p class="text-secondary row-span-1 my-5 italic text-justify px-32">Een sensor meet fysieke
                     omstandigheden op, zoals bijvoorbeeld spieractiviteit of snelheid. De data wordt automatisch
                     opgenomen en doorgestuurd om uitgelezen en geanalyseerd te worden. In het kader van het ‘Sense to
                     eXion’-project kunnen sensoren op 2 manieren worden ingezet.

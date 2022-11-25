@@ -10,12 +10,12 @@
 {% endblock %}
 
 {% block header %}
-    <h1 class="text-4xl text-center my-5 text-rose-500/50">Home</h1>
+    <h1 class="text-4xl text-center my-5 text-primary">Home</h1>
 {% endblock %}
 
 {% block body %}
     <div class="hero min-h-screen" style="background-image: url(./static/images/exoskeleton-poster.jpg);">
-        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-overlay bg-opacity-40"></div>
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-lg">
                 <h1 class="mb-5 text-5xl font-bold">Wat is Sense To Exion?</h1>
@@ -25,34 +25,39 @@
                     risicovolle beroepsactiviteiten uit te voeren. Mobilab & Care zet hiervoor enerzijds in op
                     sensibilisering, en anderzijds op het gebruik van draagbare technologieën, zoals exoskeletten en
                     slimme sensoren.</p>
-                <button class="btn btn-tertiary">Zoek een exoskelet</button>
+                <a href="{{ url_for('tool') }}">
+                    <button class="btn btn-tertiary bg-primary text-base-200">Zoek een exoskelet</button>
+                </a>
             </div>
         </div>
     </div>
     <div class="divider">Overview</div>
     <div class="mt-5 grid grid-cols-2 gap-4">
         <div class="card w-192 bg-base-100 shadow-xl image-full">
-            <figure><img class="object-cover" src="https://placeimg.com/856/300/nature" alt="Shoes"/></figure>
+            <figure><img class="object-cover" src="https://placeimg.com/856/300/nature" alt="Shoes"/>
+            </figure>
             <div class="card-body">
-                <h2 class="card-title text-4xl text-rose-500">MSA</h2>
-                <p>MSA is een verzamelnaam voor klachten ter hoogte van de musculoskeletale structuren. Hieronder vallen
+                <h2 class="card-title text-4xl text-primary">MSA</h2>
+                <p class="text-lg font-bold">MSA is een verzamelnaam voor klachten ter hoogte van de musculoskeletale
+                    structuren. Hieronder vallen
                     spieren, gewrichten, pezen, ligamenten en zenuwen.</p>
                 <a href="{{ url_for('msa') }}">
                     <div class="card-actions justify-end">
-                        <button class="btn btn-tertiary">Meer info</button>
+                        <button class="btn btn-tertiary bg-secondary text-base-200">Meer info</button>
                     </div>
                 </a>
             </div>
         </div>
         <div class="card w-192 bg-base-100 shadow-xl image-full">
-            <figure><img class="object-cover" src="https://placeimg.com/856/300/tech" alt="Shoes"/></figure>
+            <figure><img class="object-cover opacity-90" src="https://placeimg.com/856/300/tech" alt="Shoes"/></figure>
             <div class="card-body">
-                <h2 class="card-title text-4xl text-orange-500">Risico's</h2>
-                <p>De condities die bijdragen tot een verhoogd risico op MSA noemen we de risicofactoren. Om een
+                <h2 class="card-title text-4xl text-primary">Risico's</h2>
+                <p class="text-lg font-bold">De condities die bijdragen tot een verhoogd risico op MSA noemen we de
+                    risicofactoren. Om een
                     inschatting te kunnen maken van het risico op werkgerelateerde MSA zijn risicotools ontwikkeld.</p>
                 <a href="{{ url_for('risks') }}">
                     <div class="card-actions justify-end">
-                        <button class="btn btn-tertiary">Meer info</button>
+                        <button class="btn btn-tertiary bg-secondary text-base-200">Meer info</button>
                     </div>
                 </a>
             </div>
@@ -60,13 +65,14 @@
         <div class="card w-192 bg-base-100 shadow-xl image-full">
             <figure><img class="object-cover" src="https://placeimg.com/856/300/people" alt="Shoes"/></figure>
             <div class="card-body">
-                <h2 class="card-title text-4xl text-emerald-500">Exoskeletten</h2>
-                <p>Een exoskelet is een draagbaar uitwendig skelet dat beweging, houding of fysieke activiteit
+                <h2 class="card-title text-4xl text-primary">Exoskeletten</h2>
+                <p class="text-lg font-bold">Een exoskelet is een draagbaar uitwendig skelet dat beweging, houding of
+                    fysieke activiteit
                     verbetert, mogelijk maakt of ondersteunt. Exoskeletten kunnen bijgevolg mensen beschermen tegen
                     fysieke overbelasting.</p>
                 <a href="{{ url_for('exoskeletons') }}">
                     <div class="card-actions justify-end">
-                        <button class="btn btn-tertiary">Meer info</button>
+                        <button class="btn btn-tertiary bg-secondary text-base-200">Meer info</button>
                     </div>
                 </a>
             </div>
@@ -74,12 +80,13 @@
         <div class="card w-192 bg-base-100 shadow-xl image-full">
             <figure><img class="object-cover" src="https://placeimg.com/856/300/animals" alt="Shoes"/></figure>
             <div class="card-body">
-                <h2 class="card-title text-4xl text-fuchsia-500">Sensoren</h2>
-                <p>Een sensor meet fysieke omstandigheden op, zoals bijvoorbeeld spieractiviteit of snelheid, en kan
+                <h2 class="card-title text-4xl text-primary">Sensoren</h2>
+                <p class="text-lg font-bold">Een sensor meet fysieke omstandigheden op, zoals bijvoorbeeld
+                    spieractiviteit of snelheid, en kan
                     zowel gebruikt worden om beroepsactiviteiten te analyseren als om directe feedback geven.</p>
                 <a href="{{ url_for('sensors') }}">
                     <div class="card-actions justify-end">
-                        <button class="btn btn-tertiary">Meer info</button>
+                        <button class="btn btn-tertiary bg-secondary text-base-200">Meer info</button>
                     </div>
                 </a>
             </div>

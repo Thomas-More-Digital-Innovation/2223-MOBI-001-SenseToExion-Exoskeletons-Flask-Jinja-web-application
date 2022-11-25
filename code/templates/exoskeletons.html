@@ -10,23 +10,24 @@
 {% endblock %}
 
 {% block header %}
-    <h1 class="text-4xl text-center mt-5 text-rose-500/50">Exoskeletons</h1>
+    <h1 class="text-4xl text-center mt-5 text-primary">Exoskeletons</h1>
 {% endblock %}
 
 {% block body %}
     <div class="grid grid-cols-5">
-        <div class="lg:card bg-zinc-800 shadow-xl">
+        <div class="lg:card bg-accent shadow-xl">
             <figure><img src="{{ url_for('static', filename='images/exoskeletons.png') }}" alt="Shoes"/>
             </figure>
             <div class="lg:card-body">
-                <h2 class="lg:card-title text-4xl text-center mb-3">Een exoskelet, wat is dat juist? Welke soorten
+                <h2 class="lg:card-title text-4xl text-center mb-3 text-base-100">Een exoskelet, wat is dat juist? Welke
+                    soorten
                     bestaan
                     er?</h2>
             </div>
         </div>
         <div class="col-span-4 px-5">
             <div class="grid-rows-5 gap-5">
-                <p class="text-info-content row-span-1 my-5 italic text-justify px-32">De mens is niet van nature
+                <p class="text-secondary row-span-1 my-5 italic text-justify px-32">De mens is niet van nature
                     uitgerust met een exoskelet, maar kan wel gebruik maken van kunstmatige exoskeletten. Een van de
                     eerste vormen van dergelijke kunstmatige exoskeletten zijn harnassen, die gebruikt werden ter
                     bescherming bij gevechten. Stilaan zijn er ook exoskeletten ontstaan die ingezet kunnen worden voor
