@@ -10,21 +10,22 @@
 {% endblock %}
 
 {% block header %}
-    <h1 class="text-4xl text-center my-5 text-rose-500/50">Risico's</h1>
+    <h1 class="text-4xl text-center my-5 text-primary">Risico's</h1>
 {% endblock %}
 
 {% block body %}
     <div class="grid grid-cols-5">
-        <div class="card bg-zinc-800 shadow-xl">
+        <div class="card bg-accent shadow-xl">
             <figure><img src="{{ url_for('static', filename='images/risicos.png') }}" alt="Shoes"/>
             </figure>
             <div class="card-body">
-                <h2 class="card-title text-4xl text-center mb-3">Welke soorten risico's bestaan er zoal?</h2>
+                <h2 class="card-title text-4xl text-center mb-3 text-base-100">Welke soorten risico's bestaan er
+                    zoal?</h2>
             </div>
         </div>
         <div class="col-span-4 px-5">
             <div class="grid-rows-5 gap-5">
-                <p class="text-info-content row-span-1 my-5 italic text-justify px-32">Om het risico op musculoskeletale
+                <p class="text-secondary row-span-1 my-5 italic text-justify px-32">Om het risico op musculoskeletale
                     aandoeningen (MSA) te
                     kunnen bepalen
                     tijdens een professionele handeling, is het belangrijk om de professionele handeling op de juiste

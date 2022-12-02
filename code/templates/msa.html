@@ -10,17 +10,18 @@
 {% endblock %}
 
 {% block header %}
-    <h1 class="text-4xl text-center my-5 text-rose-500/50">MusculoSkeletale Aandoeningen</h1>
+    <h1 class="text-4xl text-center my-5 text-primary">MusculoSkeletale Aandoeningen</h1>
 {% endblock %}
 
 {% block body %}
     <div class="grid grid-cols-5">
-        <div class="card bg-zinc-800 shadow-xl">
+        <div class="card bg-accent shadow-xl">
             <figure><img src="{{ url_for('static', filename='images/msa.png') }}" alt="Shoes" class="object-fit"/>
             </figure>
             <div class="card-body">
-                <h2 class="card-title text-4xl text-center mb-3">Wat zijn muscoskeletale aandoeningen?</h2>
-                <p class="text-info-content italic">Musculoskeletale aandoeningen (MSA) is een verzamelnaam voor
+                <h2 class="card-title text-4xl text-center mb-3 text-base-100">Wat zijn muscoskeletale
+                    aandoeningen?</h2>
+                <p class="text-secondary italic">Musculoskeletale aandoeningen (MSA) is een verzamelnaam voor
                     klachten ter hoogte van de musculoskeletale structuren. Hieronder vallen spieren, gewrichten,
                     pezen, ligamenten en zenuwen.
                 </p>
