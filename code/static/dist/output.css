@@ -2128,11 +2128,6 @@ html {
   background-color: hsl(var(--s) / var(--tw-bg-opacity));
 }
 
-.bg-zinc-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-40 {
   --tw-bg-opacity: 0.4;
 }
@@ -2333,11 +2328,6 @@ html {
 
 .text-rose-500\/50 {
   color: rgb(244 63 94 / 0.5);
-}
-
-.text-info-content {
-  --tw-text-opacity: 1;
-  color: hsl(var(--inc, var(--nc)) / var(--tw-text-opacity));
 }
 
 .text-emerald-500 {
