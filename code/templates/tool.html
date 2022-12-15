@@ -17,7 +17,7 @@
     <div class="overflow-x-auto relative mt-16 ">
         <div class="drawer " data-theme="winter">
             <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content">
+            <div class="drawer-content ">
              <label for="my-drawer" class="btn btn-primary drawer-button">Filters</label>
              <table class="table-fixed table-hover w-full gap-4">
              <colgroup>
@@ -64,29 +64,25 @@
                   </table>
                             <!-- Page content here -->
              </div>
-             <div class="drawer-side">
-                        <label for="my-drawer" class="drawer-overlay"></label>
+             <div class="drawer-side w-[600px]">
+                        <label for="my-drawer" class="drawer-overlay w-[400px] "></label>
                         <ul class="menu p-4 w-80 bg-base-100 text-base-content">
-                            <li>
-                                <div class="dropdown">
-                                  <label tabindex="0" class="btn m-1">Click</label>
-                                      <div tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-full grid grid-cols-6 h-full w-80 ">
-                                           <button class="btn bg-[url('../../static/images/exosuit.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="1"></button>
-                                           <button class="btn bg-[url('../../static/images/exoskeleton.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="2"></button>
-                                           <button class="btn bg-[url('../../static/images/exosuit.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="1"></button>
-                                           <button class="btn bg-[url('../../static/images/exoskeleton.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="2"></button>
-                                           <button class="btn bg-[url('../../static/images/exosuit.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="1"></button>
-                                           <button class="btn bg-[url('../../static/images/exoskeleton.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="2"></button>
-                                           <button class="btn bg-[url('../../static/images/exosuit.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="1"></button>
-                                           <button class="btn bg-[url('../../static/images/exoskeleton.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="2"></button>
-                                           <button class="btn bg-[url('../../static/images/exosuit.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="1"></button>
-                                           <button class="btn bg-[url('../../static/images/exoskeleton.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="2"></button>
-                                           <button class="btn bg-[url('../../static/images/exosuit.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="1"></button>
-                                           <button class="btn bg-[url('../../static/images/exoskeleton.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="2"></button>
-                                           <button class="btn bg-[url('../../static/images/exosuit.png')] bg-contain bg-no-repeat h-24 w-24 col-span-2" value="1"></button>
-                                      </div>
-                                  </div>
-                            </li>
+                    {% for type in aim_types %}
+                        <div class="collapse w-80">
+                                <input type="checkbox" />
+                        <div class="collapse-title text-xl font-medium">
+                        <p>{{ type['name'] }}</p>
+                                </div>
+                                <div class="collapse-content">
+                                      <div tabindex="0" class="menu p-2 shadow bg-base-100 rounded-box w-full grid grid-cols-6 w-80 ">
+                                           {% for id in type['ids'] %}
+                                      <button class="btn h-24 w-24 col-span-2 border-0" value="1">
+                                      <img src="../../static/images/aim_types/101.png" class="padding-0 w-full h-full" alt="">
+                                      </button>
+                                           {% endfor %}
+                                   </div>
+                                </div>
+                            {% endfor %}
                         </ul>
              </div>
         </div>
@@ -94,14 +90,14 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{{
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{
                                         url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
-    <script>
-        jQuery(document).ready(function ($) {
-            $(".clickable-row").click(function () {
-                window.location = $(this).data("href");
-            });
-        });
-    </script>
+<script>
+jQuery(document).ready(function ($) {
+    $(".clickable-row").click(function () {
+        window.location = $(this).data("href");
+    });
+});
+</script>
 {% endblock %}

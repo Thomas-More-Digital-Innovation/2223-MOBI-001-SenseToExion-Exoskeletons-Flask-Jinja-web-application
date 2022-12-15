@@ -49,9 +49,12 @@ def sensors():
 def tool():
     query_all_exoskeletons = "MATCH (e:Exo) RETURN e.exoNaam as Name, e.exoFabrikant as Manufacturer, e.exoBeschrijving as Description"
     all_exoskeletons = g.run(query_all_exoskeletons).data()
+    query_all_aim_types = 'match (n)-[]-(p) call { with n, p with n, p where (n:Aim and n.aimIsSelectable="x") and (p:AimType and p.aimTypeIsSelectable="x") return p.aimTypeNameEn as name, n.aimId as id union with n, p with n, p where (n:StructureKinematicName and n.structureKinematicNameIsSelectable="x") and (p:StructureKinematicNameType and p.structureKinematicNameTypeIsSelectable="x") return p.structureKinematicNameTypeNameEn as name, n.structureKinematicNameId as id} return name,collect(id) as ids;'
+    all_aim_types = g.run(query_all_aim_types).data()
     # sorted_exoskeletons = sorted(all_exoskeletons, key=lambda d: d["exoskeletons"]["exo_name"])
     print(all_exoskeletons)
-    return render_template("tool.html", exoskeletons=all_exoskeletons)
+    print(all_aim_types)
+    return render_template("tool.html",  aim_types=all_aim_types, exoskeletons=all_exoskeletons)
 
 
 @app.route("/tool/<exo_name>")
