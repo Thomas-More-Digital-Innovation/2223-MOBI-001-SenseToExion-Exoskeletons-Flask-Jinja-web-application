@@ -74,12 +74,12 @@
                         <p>{{ type['name'] }}</p>
                                 </div>
                                 <div class="collapse-content">
-                                      <div tabindex="0" class="menu p-2 shadow bg-base-100 rounded-box w-full grid grid-cols-6 w-80 ">
+                                      <div tabindex="0" class="menu p-2 shadow bg-base-100 rounded-box w-full grid grid-cols-6 w-80">
                                            {% for id in type['ids'] %}
-                                      <button class="btn h-24 w-24 col-span-2 border-0" value="1">
-                                      <img src="../../static/images/aim_types/101.png" class="padding-0 w-full h-full" alt="">
+                                      <button class="p-0 h-24 w-24 col-span-2 btn" value="1">
+                                        <img src="{{ url_for('static', filename='images/aim_types/')}}{{id}}.png" alt="">
                                       </button>
-                                           {% endfor %}
+                                        {% endfor %}
                                    </div>
                                 </div>
                             {% endfor %}
