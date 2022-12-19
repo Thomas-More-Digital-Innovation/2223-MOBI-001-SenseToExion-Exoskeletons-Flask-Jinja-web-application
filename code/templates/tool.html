@@ -15,10 +15,10 @@
 
 {% block body %}
     <div class="overflow-x-auto relative mt-16 ">
-        <div class="drawer " data-theme="winter">
-            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content ">
-             <label for="my-drawer" class="btn btn-primary drawer-button">Filters</label>
+        <div class="drawer ">
+            <input id="my-drawer" type="checkbox" class="drawer-toggle " />
+            <div class="drawer-content">
+             <label for="my-drawer" class=" btn btn-primary drawer-button">Filters</label>
              <table class="table-fixed table-hover w-full gap-4">
              <colgroup>
                 <col>
@@ -64,9 +64,9 @@
                   </table>
                             <!-- Page content here -->
              </div>
-             <div class="drawer-side w-[600px]">
-                        <label for="my-drawer" class="drawer-overlay w-[400px] "></label>
-                        <ul class="menu p-4 w-80 bg-base-100 text-base-content">
+             <div class="drawer-side">
+                        <label for="my-drawer" class="drawer-overlay"></label>
+                    <ul class="menu p-4 w-96 bg-base-100 text-base-content ">
                     {% for type in aim_types %}
                         <div class="collapse w-80">
                                 <input type="checkbox" />
@@ -74,7 +74,7 @@
                         <p>{{ type['name'] }}</p>
                                 </div>
                                 <div class="collapse-content">
-                                      <div tabindex="0" class="menu p-2 shadow bg-base-100 rounded-box w-full grid grid-cols-6 w-80">
+                                      <div tabindex="0" class="menu p-2 shadow bg-base-100 rounded-box w-full grid grid-cols-6 w-fit">
                                            {% for id in type['ids'] %}
                                       <button class="p-0 h-24 w-24 col-span-2 btn" value="1">
                                         <img src="{{ url_for('static', filename='images/aim_types/')}}{{id}}.png" alt="">
